@@ -1,58 +1,35 @@
-# Sentiment Analysis Template
+# Express Middleware Boilerplate
 
-Given a sentence, return a score between 0 and 4, indicating the sentence's sentiment. 0 being very negative, 4 being very positive, 2 being neutral.
+[![N|Solid](https://amandeepmittal.gallerycdn.vsassets.io/extensions/amandeepmittal/expressjs/2.0.0/1509881293872/Microsoft.VisualStudio.Services.Icons.Default)](https://amandeepmittal.gallerycdn.vsassets.io/extensions/amandeepmittal/expressjs/2.0.0/1509881293872/Microsoft.VisualStudio.Services.Icons.Default)
 
-The engine uses the stanford CoreNLP library and the Scala binding `gangeli/CoreNLP-Scala` for parsing.
+A tiny minimal code snippet to kickstart a Node.JS middleware backend as re-usable code
 
-## Versions
+## Download and Installation
 
-### v0.1.0
+To begin using this framework, choose one of the following options to get started:
+* Clone the repo: `git clone https://github.com/pourabkarchaudhuri/express-middleware-boilerplate.git`
+* [Fork, Clone, or Download on GitHub](https://github.com/pourabkarchaudhuri/express-middleware-boilerplate)
 
-- initial version
+### Technology
 
-## import sample data
+This boilerplate uses uses a number of open source packages to work properly. The following tools were used:
 
-```
-$ python data/import_eventserver.py --access_key <your_access_key> --file data/train.tsv
-```
+* [node.js] - evented I/O for the backend
+* [Express] - fast node.js network app framework
 
-The sample training data comes from https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews. It is a tsv file. Each line contains 4 data, `PhraseId`, `SentenceId`, `Phrase` and `Sentiment`. 
+### Installation
 
-For example,
-```
-1	1	bad	1
-```
+Express requires [Node.js](https://nodejs.org/) v5+ to run.
 
-## Step to build, train and deploy the engine
+Install the dependencies and devDependencies and start the server.
 
-```
-$ pio build && pio train && pio deploy
-```
-
-## Query
-
-The query takes a `String` `s`. The result contains a `Double` called `sentiment`. 
-
-normal:
-
-```
-$ curl -H "Content-Type: application/json" \
--d '{
-  "s" : "I am happy"
-  }' \
-http://localhost:8000/queries.json \
--w %{time_connect}:%{time_starttransfer}:%{time_total}
-
-{"sentiment":3.0714285712172384}0.005:0.027:0.027
+```sh
+$ cd express-middleware-boilerplate
+$ mkdir logs
+$ npm install
+$ node index.js
 ```
 
-```
-$ curl -H "Content-Type: application/json" \
--d '{
-  "s" : "This movie sucks!"
-  }' \
-http://localhost:8000/queries.json \
--w %{time_connect}:%{time_starttransfer}:%{time_total}
 
-{"sentiment":0.8000000001798788}0.005:0.031:0.031
-```
+   [node.js]: <http://nodejs.org>
+   [express]: <http://expressjs.com>
