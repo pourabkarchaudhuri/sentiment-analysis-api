@@ -17,6 +17,15 @@ This boilerplate uses uses a number of open source packages to work properly. Th
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework
 
+### Sentiment
+
+Sentiment is a Node.js module that uses the AFINN-165 wordlist and Emoji Sentiment Ranking to perform sentiment analysis on arbitrary blocks of input text. Sentiment provides several things:
+
+* Performance (see benchmarks below)
+* The ability to append and overwrite word / value pairs from the AFINN wordlist
+* The ability to easily add support for new languages
+* The ability to easily define custom strategies for negation, emphasis, etc. on a per-language basis
+
 ### Installation
 
 Express requires [Node.js](https://nodejs.org/) v5+ to run.
