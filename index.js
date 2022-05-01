@@ -26,8 +26,6 @@ var serverUrl = process.env.BASE_URL;
 if(serverUrl == undefined || serverUrl == ""){
     serverUrl = "http://localhost:"+port;
 }
-
-}
 const expressSwagger = require("express-swagger-generator")(app);
 expressSwagger(swaggerConfig(__dirname, serverUrl));
 
