@@ -1,28 +1,17 @@
-const path = require("path");
-
-
-module.exports = (root, port) => {
+module.exports = (root, server) => {
   return {
     swaggerDefinition: {
       info: {
         description: "API documentation",
-
-        title: "Product Configurator API",
-
-        version: "2.0.0",
+        title: "Sentiment Analysis API",
+        version: "1.0.0",
       },
-
-      host: `localhost:${port}`,
-
+      host: `${server}`,
       basePath: "/api/v1",
-
       produces: ["application/json"],
-
       schemes: ["http"],
     },
-
     basedir: root,
-
     files: ["./routes/*.js"],
   };
 };
