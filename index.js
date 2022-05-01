@@ -22,9 +22,14 @@ app.use(morgan("common"));
 
 //Set PORT to Dynamic Environments to run on any Server
 var port = process.env.PORT || 3001;
+var serverUrl = process.env.BASE_URL;
+if(serverUrl == undefined || serverUrl == ""){
+    serverUrl = "http://localhost:"+port;
+}
 
+}
 const expressSwagger = require("express-swagger-generator")(app);
-expressSwagger(swaggerConfig(__dirname, process.env.BASE_URL));
+expressSwagger(swaggerConfig(__dirname, serverUrl));
 
 //Configure Express to Recieve JSON and extended URLencoded formats
 app.use(bodyParser.json()); // support json encoded bodies

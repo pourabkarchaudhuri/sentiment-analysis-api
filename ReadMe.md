@@ -34,7 +34,6 @@ $ npm start
 ```
 
 ### Usage
-
 This is a GET API
 `http://localhost:3001/api/v1/analysis?input=PUT_TEXT_HERE`
 
