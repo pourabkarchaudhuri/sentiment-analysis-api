@@ -1,14 +1,12 @@
-# Express Middleware Boilerplate
-
-[![N|Solid](https://amandeepmittal.gallerycdn.vsassets.io/extensions/amandeepmittal/expressjs/2.0.0/1509881293872/Microsoft.VisualStudio.Services.Icons.Default)](https://amandeepmittal.gallerycdn.vsassets.io/extensions/amandeepmittal/expressjs/2.0.0/1509881293872/Microsoft.VisualStudio.Services.Icons.Default)
+# Sentiment Analysis API
 
 A tiny minimal code snippet to kickstart a Node.JS middleware backend as re-usable code
 
 ## Download and Installation
 
 To begin using this framework, choose one of the following options to get started:
-* Clone the repo: `git clone https://github.com/pourabkarchaudhuri/express-middleware-boilerplate.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/pourabkarchaudhuri/express-middleware-boilerplate)
+* Clone the repo: `git clone https://github.com/pourabkarchaudhuri/sentiment-analysis-api.git`
+* [Fork, Clone, or Download on GitHub](https://github.com/pourabkarchaudhuri/sentiment-analysis-api.git)
 
 ### Technology
 
@@ -17,27 +15,24 @@ This boilerplate uses uses a number of open source packages to work properly. Th
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework
 
+
 ### Sentiment
 
 Sentiment is a Node.js module that uses the AFINN-165 wordlist and Emoji Sentiment Ranking to perform sentiment analysis on arbitrary blocks of input text. Sentiment provides several things:
-
-* Performance (see benchmarks below)
-* The ability to append and overwrite word / value pairs from the AFINN wordlist
 * The ability to easily add support for new languages
 * The ability to easily define custom strategies for negation, emphasis, etc. on a per-language basis
 
 ### Installation
 
-Express requires [Node.js](https://nodejs.org/) v5+ to run.
+Express requires [Node.js](https://nodejs.org/) to run.
 
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ cd express-middleware-boilerplate
-$ mkdir logs
 $ npm install
-$ node index.js
+$ npm start
 ```
+
 
 
    [node.js]: <http://nodejs.org>
