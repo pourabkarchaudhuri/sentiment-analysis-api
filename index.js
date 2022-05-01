@@ -7,7 +7,8 @@ var morgan = require("morgan");
 var fs = require("fs");
 const routes = require("./routes/nlp");
 var path = require("path");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const swaggerConfig = require("./config/swagger");
 
 //Configuring the Express Middleware
@@ -23,7 +24,7 @@ app.use(morgan("common"));
 var port = process.env.PORT || 3001;
 
 const expressSwagger = require("express-swagger-generator")(app);
-expressSwagger(swaggerConfig(__dirname, port));
+expressSwagger(swaggerConfig(__dirname, process.env.BASE_URL));
 
 //Configure Express to Recieve JSON and extended URLencoded formats
 app.use(bodyParser.json()); // support json encoded bodies
@@ -35,17 +36,12 @@ app.use(
   })
 );
 
-app.use(
-  bodyParser.json({
-    limit: "50mb",
-  })
-);
+app.use(express.json());       // to support JSON-encoded bodies
+
 //Set RESTful routes
 
 app.get("/", function (req, res) {
-  res.status(200).json({
-    status: "success",
-  });
+  res.redirect("/api-docs");
 });
 //Route for GET
 

@@ -33,6 +33,12 @@ $ npm install
 $ npm start
 ```
 
+### Usage
+
+This is a GET API
+`http://localhost:3001/api/v1/analysis?input=PUT_TEXT_HERE`
+
+You can also use in-editor API clients, or Postman
 
 
    [node.js]: <http://nodejs.org>
